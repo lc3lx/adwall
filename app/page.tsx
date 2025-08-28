@@ -1,14 +1,23 @@
-"use client"
+"use client";
 
-import { UltraHeader } from "@/components/ultra-header"
-import { Footer } from "@/components/footer"
-import { UltraHero } from "@/components/ultra-hero"
-import { CategoriesGrid } from "@/components/categories-grid"
-import { useI18n } from "@/providers/lang-provider"
-import { Star, Users, Zap, Shield, TrendingUp, Award, Sparkles, ArrowRight } from "lucide-react"
-import { Suspense, useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { UltraHeader } from "@/components/ultra-header";
+import { Footer } from "@/components/footer";
+import { UltraHero } from "@/components/ultra-hero";
+import { CategoriesGrid } from "@/components/categories-grid";
+import { useI18n } from "@/providers/lang-provider";
+import {
+  Star,
+  Users,
+  Zap,
+  Shield,
+  TrendingUp,
+  Award,
+  Sparkles,
+  ArrowRight,
+} from "lucide-react";
+import { Suspense, useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 function UltraFeatureCard({
   icon: Icon,
@@ -16,23 +25,23 @@ function UltraFeatureCard({
   description,
   delay = 0,
 }: {
-  icon: any
-  title: string
-  description: string
-  delay?: number
+  icon: any;
+  title: string;
+  description: string;
+  delay?: number;
 }) {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay)
-    return () => clearTimeout(timer)
-  }, [delay])
+    const timer = setTimeout(() => setIsVisible(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
 
   return (
     <div
       className={cn(
         "ultra-card p-8 text-center group cursor-pointer transition-all duration-700",
-        isVisible ? "scroll-fade-in visible" : "scroll-fade-in",
+        isVisible ? "scroll-fade-in visible" : "scroll-fade-in"
       )}
     >
       <div className="relative mb-6">
@@ -44,50 +53,58 @@ function UltraFeatureCard({
       <h3 className="font-bold text-xl mb-4 group-hover:text-primary-600 transition-colors duration-300 text-shadow-sm">
         {title}
       </h3>
-      <p className="text-base text-muted-foreground leading-relaxed">{description}</p>
+      <p className="text-base text-muted-foreground leading-relaxed">
+        {description}
+      </p>
     </div>
-  )
+  );
 }
 
 function cn(...classes: string[]) {
-  return classes.filter(Boolean).join(" ")
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function HomePage() {
-  const { t } = useI18n()
+  const { t } = useI18n();
 
   const features = [
     {
       icon: Star,
-      title: "خطط VIP فاخرة",
-      description: "أولوية الظهور المطلقة مع شارة ذهبية مميزة وإحصائيات تفصيلية متقدمة لشركتك",
+      title: "🔹خطط VIP مميزة",
+      description:
+        "استمتع بأولوية الظهور المطلقة مع الشارة الذهبية، وتقارير تحليلية متقدمة تمنح شركتك رؤية أعمق وفرصًا أقوى للنمو.",
     },
     {
       icon: Users,
-      title: "تواصل فوري ومباشر",
-      description: "هاتف، واتساب، إيميل وموقع إلكتروني - كل وسائل التواصل في مكان واحد متطور",
+      title: "🔹تواصل فوري وسلس",
+      description:
+        "هاتف، واتساب، بريد إلكتروني وموقع إلكتروني… جميع وسائل التواصل متاحة في مكان واحد بواجهة ذكية ومتطورة، لتبقى أقرب إلى عملائك دائمًا.",
     },
     {
       icon: Zap,
-      title: "سرعة البرق",
-      description: "إضافة وإدارة الإعلانات في ثوانٍ معدودة مع واجهة عصرية وسهلة الاستخدام",
+      title: "🔹سرعة البرق",
+      description:
+        "أضف إعلاناتك وادِرها بسهولة خلال دقائق، بواجهة حديثة وسهلة الاستخدام.",
     },
     {
       icon: Shield,
-      title: "أمان عالمي",
-      description: "نظام دفع محمي ومشفر بأعلى المعايير العالمية عبر Stripe المعتمد دولياً",
+      title: "🔹أمان عالمي",
+      description:
+        "استمتع بنظام دفع محمي ومشفّر وفق أعلى المعايير الدولية، عبر Stripe المعتمد عالميًا.",
     },
     {
       icon: TrendingUp,
-      title: "نمو متسارع",
-      description: "آلاف الشركات الجديدة والعملاء المحتملين ينضمون شهرياً لمنصتنا المتنامية",
+      title: "🔹نمو متسارع",
+      description:
+        "تنضم آلاف الشركات الجديدة والعملاء المحتملين إلى منصّتنا كل شهر، مما يعكس الثقة المتزايدة بقيمتنا المتنامية",
     },
     {
       icon: Award,
-      title: "جودة استثنائية",
-      description: "مراجعة وتدقيق شامل لجميع الإعلانات من فريق متخصص قبل النشر والموافقة",
+      title: "🔹جودة استثنائية",
+      description:
+        "نهتم بأدق التفاصيل؛ فجميع الإعلانات تمرّ بمراجعة شاملة من فريق متخصص لضمان أعلى مستويات الجودة قبل النشر والموافقة.",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen">
@@ -104,26 +121,36 @@ export default function HomePage() {
             <div className="text-center mb-20 scroll-fade-in visible">
               <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass glow-primary mb-8">
                 <Sparkles className="h-5 w-5 text-primary-600" />
-                <span className="text-sm font-bold gradient-text">لماذا نحن الأفضل؟</span>
+                <span className="text-sm font-bold gradient-text">
+                  لماذا نحن الأفضل؟
+                </span>
               </div>
               <h2 className="text-ultra-lg font-black mb-6 text-balance">
                 منصة <span className="gradient-text">AdWell</span> العصرية
               </h2>
               <p className="text-ultra-base text-muted-foreground max-w-3xl mx-auto text-balance leading-relaxed">
-                تجربة فريدة ومتطورة لعرض وإدارة إعلانات الشركات مع أحدث التقنيات العالمية والتصميم العصري المبتكر
+                مع AdWall بتعيش تجربة مختلفة لعرض وإدارة الإعلانات. بنجمع لك
+                أحدث التقنيات مع تصميم عصري بسيط ومبتكر يخلي شغلك يبان بأفضل
+                صورة{" "}
               </p>
             </div>
 
             <div className="ultra-grid">
               {features.map((feature, index) => (
-                <UltraFeatureCard key={index} {...feature} delay={index * 100} />
+                <UltraFeatureCard
+                  key={index}
+                  {...feature}
+                  delay={index * 100}
+                />
               ))}
             </div>
           </div>
         </section>
 
         {/* Categories Section */}
-        <Suspense fallback={<div className="h-96 skeleton-ultra rounded-3xl mx-6" />}>
+        <Suspense
+          fallback={<div className="h-96 skeleton-ultra rounded-3xl mx-6" />}
+        >
           <CategoriesGrid />
         </Suspense>
 
@@ -153,8 +180,9 @@ export default function HomePage() {
                   </h2>
 
                   <p className="text-xl opacity-90 max-w-3xl mx-auto mb-10 text-balance leading-relaxed text-shadow">
-                    كن جزءاً من ثورة الإعلانات الرقمية وانضم إلى آلاف الشركات الناجحة التي تستخدم AdWell للوصول إلى عملاء
-                    جدد وتحقيق نمو استثنائي في أعمالها
+                    انضم إلى مستقبل الإعلانات الرقمية كن جزءًا من ثورة الإعلان
+                    الرقمي، وانضم إلى آلاف الشركات الرائدة التي تثق في AdWall
+                    للوصول إلى عملاء جدد وتحقيق نمو استثنائي في أعمالها.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -191,5 +219,5 @@ export default function HomePage() {
 
       <Footer />
     </div>
-  )
+  );
 }

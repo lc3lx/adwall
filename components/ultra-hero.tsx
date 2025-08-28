@@ -1,21 +1,29 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { useI18n } from "@/providers/lang-provider"
-import Link from "next/link"
-import { ArrowRight, Sparkles, Plus, Grid3X3, Star, Zap, Users } from "lucide-react"
-import { UltraSlider } from "./ultra-slider"
-import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button";
+import { useI18n } from "@/providers/lang-provider";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Sparkles,
+  Plus,
+  Grid3X3,
+  Star,
+  Zap,
+  Users,
+} from "lucide-react";
+import { UltraSlider } from "./ultra-slider";
+import { useEffect, useState } from "react";
 
 export function UltraHero() {
-  const { t } = useI18n()
-  const [mounted, setMounted] = useState(false)
+  const { t } = useI18n();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-pattern-grid">
@@ -35,7 +43,7 @@ export function UltraHero() {
               <div className="flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-primary-600 animate-pulse" />
                 <span className="text-sm font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">
-                  جديد: خطط VIP مع أولوية الظهور
+                  اكتشف الآن: خطط VIP مع أولوية الظهور والتميز
                 </span>
               </div>
             </div>
@@ -45,17 +53,24 @@ export function UltraHero() {
               <h1 className="text-ultra-xl font-black text-balance">
                 <span className="gradient-text">{t("heroTitle")}</span>
                 <br />
-                <span className="text-foreground/80">العصري</span>
               </h1>
               <p className="text-ultra-base text-muted-foreground max-w-2xl text-balance leading-relaxed">
-                {t("heroDesc")} اكتشف آلاف الشركات المميزة، تواصل مباشرة مع أصحاب الأعمال، واحصل على أفضل الخدمات في
-                منطقتك بتقنية متطورة وتصميم عصري.
+                {/* {t("heroDesc")} */}
+                المنصّة التي تجمع الزائرين والشركات في مكان واحد. <br />
+                في AdWall نوفر للزائرين تجربة سهلة وشفافة لاكتشاف أفضل الشركات
+                والخدمات بسرعة، ونمنح الشركات فرصة مميزة للظهور أمام جمهور واسع
+                يبحث عمّا يقدّمونه. Adwall منصّة ذكية تبني الثقة بين الشركات
+                والعملاء، وهي المكان الأمثل للتميّز
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
-              <Button asChild size="lg" className="btn-ultra group text-lg px-10 py-6">
+              <Button
+                asChild
+                size="lg"
+                className="btn-ultra group text-lg px-10 py-6"
+              >
                 <Link href="/ad/new">
                   <Plus className="h-6 w-6 mr-3" />
                   {t("addAd")}
@@ -82,21 +97,27 @@ export function UltraHero() {
                   <Star className="h-5 w-5 text-amber-500" />
                   <div className="text-3xl font-black gradient-text">1000+</div>
                 </div>
-                <div className="text-sm text-muted-foreground font-medium">شركة مسجلة</div>
+                <div className="text-sm text-muted-foreground font-medium">
+                  شركة مسجلة
+                </div>
               </div>
               <div className="text-center group">
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <Zap className="h-5 w-5 text-primary-500" />
                   <div className="text-3xl font-black gradient-text">14</div>
                 </div>
-                <div className="text-sm text-muted-foreground font-medium">تصنيف متنوع</div>
+                <div className="text-sm text-muted-foreground font-medium">
+                  تصنيف متنوع
+                </div>
               </div>
               <div className="text-center group">
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <Users className="h-5 w-5 text-green-500" />
                   <div className="text-3xl font-black gradient-text">3</div>
                 </div>
-                <div className="text-sm text-muted-foreground font-medium">دول مدعومة</div>
+                <div className="text-sm text-muted-foreground font-medium">
+                  دول مدعومة
+                </div>
               </div>
             </div>
           </div>
@@ -109,5 +130,5 @@ export function UltraHero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

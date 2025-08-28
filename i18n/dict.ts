@@ -1,12 +1,12 @@
-export type Locale = "ar" | "en"
+export type Locale = "ar" | "en";
 
 export const dict: Record<Locale, Record<string, string>> = {
   ar: {
     siteName: "AdWell",
     home: "الرئيسية",
-    addAd: "أضف شركتك",
+    addAd: " أضف شركتك ألان",
     admin: "لوحة التحكم",
-    categories: "التصنيفات",
+    categories: "اكتشف التصنيفات",
     viewAll: "عرض الكل",
     search: "بحث",
     country: "الدولة",
@@ -22,8 +22,9 @@ export const dict: Record<Locale, Record<string, string>> = {
     theme: "السمة",
     light: "نهاري",
     dark: "ليلي",
-    heroTitle: "جدار إعلانات للشركات",
-    heroDesc: "اكتشف شركات حسب التصنيف والموقع، وتواصل مباشرة عبر الهاتف أو واتساب.",
+    heroTitle: "دع اعلانك يصل الى العالم مع AdWall",
+    heroDesc:
+      "اكتشف شركات حسب التصنيف والموقع، وتواصل مباشرة عبر الهاتف أو واتساب.",
     adminDashboard: "لوحة تحكم الأدمن",
     totalAds: "إجمالي الشركات",
     totalVip: "شركات VIP",
@@ -84,7 +85,8 @@ export const dict: Record<Locale, Record<string, string>> = {
     light: "Light",
     dark: "Dark",
     heroTitle: "Company Ads Wall",
-    heroDesc: "Discover companies by category and location, and contact directly via phone or WhatsApp.",
+    heroDesc:
+      "Discover companies by category and location, and contact directly via phone or WhatsApp.",
     adminDashboard: "Admin Dashboard",
     totalAds: "Total Companies",
     totalVip: "VIP Companies",
@@ -123,4 +125,4 @@ export const dict: Record<Locale, Record<string, string>> = {
     uploadCover: "Upload Cover Image",
     publishAndPay: "Publish & Pay",
   },
-}
+};
